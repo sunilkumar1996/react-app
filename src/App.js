@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
+import Navbar from './components/layout/Navbar';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Login from './components/pages/Login';
+import NotFound from './components/pages/NotFound';
+import Register from './components/pages/Register';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <div className="page-wrapper">
+                    <Navbar/>
+                    <Switch>
+                        <Route path="/" exact
+                            component={Home}/>
+                        <Route path="/about" exact
+                            component={About}/>
+                        <Route path="/contact" exact
+                            component={Contact}/>
+                        <Route path="/login" exact
+                            component={Login}/>
+                        <Route path="/register" exact
+                            component={Register}/>
+                        <Route component={NotFound}/>
+
+                    </Switch>
+                </div>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
