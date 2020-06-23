@@ -10,6 +10,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Login from './components/pages/Login';
 import NotFound from './components/pages/NotFound';
 import Register from './components/pages/Register';
+import ForgotPassword from './components/pages/Forgot-password';
 
 function App() {
     return (
@@ -28,6 +29,8 @@ function App() {
                             component={Login}/>
                         <Route path="/register" exact
                             component={Register}/>
+                        <Route path="/forgot-password" exact
+                            component={ForgotPassword}/>
                         <Route component={NotFound}/>
 
                     </Switch>
