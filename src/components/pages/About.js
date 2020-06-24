@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Footer from '../layout/Footer';
 
-const About = () => {
-    return (
-        <div className="container">
-            <div className="py-4">
+class About extends Component {
+    render() {
+        return (
             <div className="container">
+                <div className="py-4">
+                    <div className="container">
                         <div className="card">
                             <div className="card-header">
                                 <h1>About-Us Page</h1>
@@ -18,9 +19,10 @@ const About = () => {
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default About;
