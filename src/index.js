@@ -3,11 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 // import Home from './components/pages/Home';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import { Provider } from 'react-redux';
+// import reducer from './reducers/reducer';
+import {reducer as formReducer} from 'redux-form';
+
+const rootReducer = combineReducers({
+  form: formReducer
+})
+
+const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
+    <Provider store={store}>
     <App name="Rahul"/>
-  </React.StrictMode>,
+    </Provider>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 // ReactDOM.render(<Home name="sunil"/>,document.getElementById('root'));
