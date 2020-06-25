@@ -14,12 +14,12 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer)
 
-ReactDOM.render(
-  // <React.StrictMode>
-    <Provider store={store}>
-    <App name="Rahul"/>
-    </Provider>,
-  // </React.StrictMode>,
-  document.getElementById('root')
-);
-// ReactDOM.render(<Home name="sunil"/>,document.getElementById('root'));
+// ReactDOM.render(
+//   // <React.StrictMode>
+//     <Provider store={store}>
+//     <App />
+//     </Provider>,
+//   // </React.StrictMode>,
+//   document.getElementById('root')
+// );
+ReactDOM.render(<Provider store={store}><App /></Provider>,document.getElementById('root'));

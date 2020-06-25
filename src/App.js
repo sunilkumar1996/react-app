@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -11,38 +11,39 @@ import Login from './components/pages/Login';
 import NotFound from './components/pages/NotFound';
 import Register from './components/pages/Register';
 import ForgotPassword from './components/pages/Forgot-password';
+import Profile from './components/pages/Profile';
 
-// const App = props => {
-function App(props) {
-    return (
-        <Router>
-            <div className="App">
-                <div className="page-wrapper">
-                    <Navbar/>
-                    <h1>Hello, {
-                        props.name
-                    }</h1>
 
-                    <Switch>
-                        <Route path="/" exact
-                            component={Home}
-                            />
-                        <Route path="/about" exact
-                            component={About}/>
-                        <Route path="/contact" exact
-                            component={Contact}/>
-                        <Route path="/login" exact
-                            component={Login}/>
-                        <Route path="/register" exact
-                            component={Register}/>
-                        <Route path="/forgot-password" exact
-                            component={ForgotPassword}/>
-                        <Route component={NotFound}/>
-                    </Switch>
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <div className="container col-md-12">
+                    <div className="page-wrapper">
+                        <Navbar/>
+                        <Switch>
+                            <Route path="/" exact>
+                                <Profile components={Home}/>
+                            </Route>
+                            <Route path="/about">
+                                <Profile components={About}/>
+                            </Route>
+                            <Route path="/contact">
+                                <Profile components={Contact}/>
+                            </Route>
+                            <Route path="/login"
+                                component={Login}/>
+                            <Route path="/register"
+                                component={Register}/>
+                            <Route path="/forgot-password">
+                                <Profile components={ForgotPassword}/>
+                            </Route>
+                            <Route component={NotFound}/>
+                        </Switch>
+                    </div>
                 </div>
-            </div>
-        </Router>
-    );
+            </Router>
+        );
+    }
 }
-
 export default App;

@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import Footer from '../layout/Footer';
 
 // const Home = () => {
@@ -10,17 +10,13 @@ function Home(props) {
                 <div className="container">
                     <div className="card">
                         <div className="card-header">
-                            <h1>This is Home page {props.text}.</h1>
+                            <h1>This is Home page.</h1>
                         </div>
                         <div className="card-body">
                             <h3>Hello, {
                                 props.myname
                             }</h3>
-                            <button className="btn btn-outline-primary" onClick={
-                                () => {
-                                    props.changeName("Monika")
-                                }
-                            }>Change it</button>
+                            <button className="btn btn-outline-primary">Change it</button>
                             <p>element defines a part of text in an alternate voice or mood. The content inside is typically displayed in</p>
                         </div>
                         <div className="card-footer">
@@ -33,7 +29,7 @@ function Home(props) {
     );
 
 }
-
+    
 // const mapStateToProps = (state) => {
 //     return {myname: state.name}
 // }
