@@ -33,11 +33,8 @@ class Login extends Component {
         }).then(result =>{
             return result.json()
         }).then(data => {
-            // debugger
             console.log(data.access_token);
-            // debugger 
             localStorage.setItem("token", JSON.stringify(data.access_token))
-
         })
         // }).then(function (renponse) {
         //     debugger
